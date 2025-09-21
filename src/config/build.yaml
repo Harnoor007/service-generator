@@ -88270,10 +88270,10 @@ x-validations:
               var_enum: ["Delivery", "Buyer-Delivery"]
               _CONTINUE_: "!(attr are present)"
               _RETURN_: attr all in var_enum
-            # - _NAME_: FULFILLMENTS_CONTACT_PHONE  
-            #   attr: "$.message.catalog['bpp/providers'][*].fulfillments[*].contact.phone"
-            #   _CONTINUE_: "!(attr are present)"
-              # _RETURN_: attr are present
+            - _NAME_: FULFILLMENTS_CONTACT_PHONE  
+              attr: "$.message.catalog['bpp/providers'][*].fulfillments[*].contact.phone"
+              _CONTINUE_: "!(attr are present)"
+              _RETURN_: attr are present
             - _NAME_: FULFILLMENTS_CONTACT_EMAIL
               attr: "$.message.catalog['bpp/providers'][*].fulfillments[*].contact.email"
               _CONTINUE_: "!(attr are present)"
@@ -88391,65 +88391,65 @@ x-validations:
               _CONTINUE_: "!(attr are present)"
               _RETURN_: attr are present
             - _NAME_: BPP_PROVIDER_CATEGORIES_TAGS
-              _RETURN_: []
+              _RETURN_: 
 
-              # - _NAME_: TAGS_PROVIDER_CATEGORY_TIMING
-              #   _RETURN_:
-              #   - _NAME_: TAGS_PROVIDER_CATEGORY_TIMING_TYPE
-              #     _CONTINUE_: "!(attr are present)"
-              #     attr: "$.message.catalog['bpp/providers'][*].categories[*].tags[?(@.code=='timing')].list[?(@.code=='type')].value"
-              #     var_enum: ["Self-Pickup", "Order", "Delivery", "All"]
-              #     _RETURN_: attr all in var_enum
+              - _NAME_: TAGS_PROVIDER_CATEGORY_TIMING
+                _RETURN_:
+                - _NAME_: TAGS_PROVIDER_CATEGORY_TIMING_TYPE
+                  _CONTINUE_: "!(attr are present)"
+                  attr: "$.message.catalog['bpp/providers'][*].categories[*].tags[?(@.code=='timing')].list[?(@.code=='type')].value"
+                  var_enum: ["Self-Pickup", "Order", "Delivery", "All"]
+                  _RETURN_: attr all in var_enum
 
-              #   - _NAME_: TAGS_PROVIDER_CATEGORY_TIMING_DAY_FROM
-              #     _CONTINUE_: "!(attr are present)"
-              #     attr: "$.message.catalog['bpp/providers'][*].categories[*].tags[?(@.code=='timing')].list[?(@.code=='day_from')].value"
-              #     _RETURN_: attr are present
+                - _NAME_: TAGS_PROVIDER_CATEGORY_TIMING_DAY_FROM
+                  _CONTINUE_: "!(attr are present)"
+                  attr: "$.message.catalog['bpp/providers'][*].categories[*].tags[?(@.code=='timing')].list[?(@.code=='day_from')].value"
+                  _RETURN_: attr are present
 
-              #   - _NAME_: TAGS_PROVIDER_CATEGORY_TIMING_DAY_TO
-              #     _CONTINUE_: "!(attr are present)"
-              #     attr: "$.message.catalog['bpp/providers'][*].categories[*].tags[?(@.code=='timing')].list[?(@.code=='day_to')].value"
-              #     _RETURN_: attr are present
+                - _NAME_: TAGS_PROVIDER_CATEGORY_TIMING_DAY_TO
+                  _CONTINUE_: "!(attr are present)"
+                  attr: "$.message.catalog['bpp/providers'][*].categories[*].tags[?(@.code=='timing')].list[?(@.code=='day_to')].value"
+                  _RETURN_: attr are present
 
-              #   - _NAME_: TAGS_PROVIDER_CATEGORY_TIMING_TIME_FROM
-              #     _CONTINUE_: "!(attr are present)"
-              #     attr: "$.message.catalog['bpp/providers'][*].categories[*].tags[?(@.code=='timing')].list[?(@.code=='time_from')].value"
-              #     _RETURN_: attr are present
+                - _NAME_: TAGS_PROVIDER_CATEGORY_TIMING_TIME_FROM
+                  _CONTINUE_: "!(attr are present)"
+                  attr: "$.message.catalog['bpp/providers'][*].categories[*].tags[?(@.code=='timing')].list[?(@.code=='time_from')].value"
+                  _RETURN_: attr are present
 
-              #   - _NAME_: TAGS_PROVIDER_CATEGORY_TIMING_TIME_TO
-              #     _CONTINUE_: "!(attr are present)"
-              #     attr: "$.message.catalog['bpp/providers'][*].categories[*].tags[?(@.code=='timing')].list[?(@.code=='time_to')].value"
-              #     _RETURN_: attr are present
+                - _NAME_: TAGS_PROVIDER_CATEGORY_TIMING_TIME_TO
+                  _CONTINUE_: "!(attr are present)"
+                  attr: "$.message.catalog['bpp/providers'][*].categories[*].tags[?(@.code=='timing')].list[?(@.code=='time_to')].value"
+                  _RETURN_: attr are present
 
-              # - _NAME_: TAGS_PROVIDER_CATEGORY_DISPLAY
-              #   _RETURN_:
-              #   - _NAME_: TAGS_PROVIDER_CATEGORY_DISPLAY_RANK
-              #     _CONTINUE_: "!(attr are present)"
-              #     attr: "$.message.catalog['bpp/providers'][*].categories[*].tags[?(@.code=='display')].list[?(@.code=='rank')].value"
-              #     _RETURN_: attr are present
+              - _NAME_: TAGS_PROVIDER_CATEGORY_DISPLAY
+                _RETURN_:
+                - _NAME_: TAGS_PROVIDER_CATEGORY_DISPLAY_RANK
+                  _CONTINUE_: "!(attr are present)"
+                  attr: "$.message.catalog['bpp/providers'][*].categories[*].tags[?(@.code=='display')].list[?(@.code=='rank')].value"
+                  _RETURN_: attr are present
 
-              # - _NAME_: TAGS_PROVIDER_CATEGORY_CONFIG
-              #   _RETURN_:
-              #   - _NAME_: TAGS_PROVIDER_CATEGORY_CONFIG_MIN
-              #     _CONTINUE_: "!(attr are present)"
-              #     attr: "$.message.catalog['bpp/providers'][*].categories[*].tags[?(@.code=='config')].list[?(@.code=='min')].value"
-              #     _RETURN_: attr are present
+              - _NAME_: TAGS_PROVIDER_CATEGORY_CONFIG
+                _RETURN_:
+                - _NAME_: TAGS_PROVIDER_CATEGORY_CONFIG_MIN
+                  _CONTINUE_: "!(attr are present)"
+                  attr: "$.message.catalog['bpp/providers'][*].categories[*].tags[?(@.code=='config')].list[?(@.code=='min')].value"
+                  _RETURN_: attr are present
 
-              #   - _NAME_: TAGS_PROVIDER_CATEGORY_CONFIG_MAX
-              #     _CONTINUE_: "!(attr are present)"
-              #     attr: "$.message.catalog['bpp/providers'][*].categories[*].tags[?(@.code=='config')].list[?(@.code=='max')].value"
-              #     _RETURN_: attr are present
+                - _NAME_: TAGS_PROVIDER_CATEGORY_CONFIG_MAX
+                  _CONTINUE_: "!(attr are present)"
+                  attr: "$.message.catalog['bpp/providers'][*].categories[*].tags[?(@.code=='config')].list[?(@.code=='max')].value"
+                  _RETURN_: attr are present
 
-              #   - _NAME_: TAGS_PROVIDER_CATEGORY_CONFIG_INPUT
-              #     _CONTINUE_: "!(attr are present)"
-              #     attr: "$.message.catalog['bpp/providers'][*].categories[*].tags[?(@.code=='config')].list[?(@.code=='input')].value"
-              #     var_enum: ["select", "text"]
-              #     _RETURN_: attr all in var_enum
+                - _NAME_: TAGS_PROVIDER_CATEGORY_CONFIG_INPUT
+                  _CONTINUE_: "!(attr are present)"
+                  attr: "$.message.catalog['bpp/providers'][*].categories[*].tags[?(@.code=='config')].list[?(@.code=='input')].value"
+                  var_enum: ["select", "text"]
+                  _RETURN_: attr all in var_enum
 
-              #   - _NAME_: TAGS_PROVIDER_CATEGORY_CONFIG_SEQ
-              #     _CONTINUE_: "!(attr are present)"
-              #     attr: "$.message.catalog['bpp/providers'][*].categories[*].tags[?(@.code=='config')].list[?(@.code=='seq')].value"
-              #     _RETURN_: attr are present
+                - _NAME_: TAGS_PROVIDER_CATEGORY_CONFIG_SEQ
+                  _CONTINUE_: "!(attr are present)"
+                  attr: "$.message.catalog['bpp/providers'][*].categories[*].tags[?(@.code=='config')].list[?(@.code=='seq')].value"
+                  _RETURN_: attr are present
 
           - _NAME_: PROVIDERS_ITEMS
             _RETURN_:
@@ -88518,30 +88518,30 @@ x-validations:
               _CONTINUE_: "!(attr are present)"
               _RETURN_: attr are present
             - _NAME_: ITEMS_PRICE_TAGS
-              _RETURN_: []
-              # - _NAME_: TAGS_PROVIDERS_ITEMS_PRICE_RANGE
-              #   _RETURN_:
-              #   - _NAME_: TAGS_PROVIDERS_ITEMS_PRICE_RANGE_LOWER
-              #     _CONTINUE_: "!(attr are present)"
-              #     attr: "$.message.catalog['bpp/providers'][*].items[*].price.tags[?(@.code=='range')].list[?(@.code=='lower')].value"
-              #     _RETURN_: attr are present
+              _RETURN_: 
+              - _NAME_: TAGS_PROVIDERS_ITEMS_PRICE_RANGE
+                _RETURN_:
+                - _NAME_: TAGS_PROVIDERS_ITEMS_PRICE_RANGE_LOWER
+                  _CONTINUE_: "!(attr are present)"
+                  attr: "$.message.catalog['bpp/providers'][*].items[*].price.tags[?(@.code=='range')].list[?(@.code=='lower')].value"
+                  _RETURN_: attr are present
 
-              #   - _NAME_: TAGS_PROVIDERS_ITEMS_PRICE_RANGE_UPPER
-              #     _CONTINUE_: "!(attr are present)"
-              #     attr: "$.message.catalog['bpp/providers'][*].items[*].price.tags[?(@.code=='range')].list[?(@.code=='upper')].value"
-              #     _RETURN_: attr are present
+                - _NAME_: TAGS_PROVIDERS_ITEMS_PRICE_RANGE_UPPER
+                  _CONTINUE_: "!(attr are present)"
+                  attr: "$.message.catalog['bpp/providers'][*].items[*].price.tags[?(@.code=='range')].list[?(@.code=='upper')].value"
+                  _RETURN_: attr are present
 
-              # - _NAME_: TAGS_PROVIDERS_ITEMS_PRICE_DEFAULT_SELECTION
-              #   _RETURN_:
-              #   - _NAME_: TAGS_PROVIDERS_ITEMS_PRICE_DEFAULT_SELECTION_VALUE
-              #     _CONTINUE_: "!(attr are present)"
-              #     attr: "$.message.catalog['bpp/providers'][*].items[*].price.tags[?(@.code=='default_selection')].list[?(@.code=='value')].value"
-              #     _RETURN_: attr are present
+              - _NAME_: TAGS_PROVIDERS_ITEMS_PRICE_DEFAULT_SELECTION
+                _RETURN_:
+                - _NAME_: TAGS_PROVIDERS_ITEMS_PRICE_DEFAULT_SELECTION_VALUE
+                  _CONTINUE_: "!(attr are present)"
+                  attr: "$.message.catalog['bpp/providers'][*].items[*].price.tags[?(@.code=='default_selection')].list[?(@.code=='value')].value"
+                  _RETURN_: attr are present
 
-              #   - _NAME_: TAGS_PROVIDERS_ITEMS_PRICE_DEFAULT_SELECTION_MAXIMUM_VALUE
-              #     _CONTINUE_: "!(attr are present)"
-              #     attr: "$.message.catalog['bpp/providers'][*].items[*].price.tags[?(@.code=='default_selection')].list[?(@.code=='maximum_value')].value"
-              #     _RETURN_: attr are present
+                - _NAME_: TAGS_PROVIDERS_ITEMS_PRICE_DEFAULT_SELECTION_MAXIMUM_VALUE
+                  _CONTINUE_: "!(attr are present)"
+                  attr: "$.message.catalog['bpp/providers'][*].items[*].price.tags[?(@.code=='default_selection')].list[?(@.code=='maximum_value')].value"
+                  _RETURN_: attr are present
             - _NAME_: ITEMS_CATEGORY_ID
               attr: "$.message.catalog['bpp/providers'][*].items[*].category_id"
               _CONTINUE_: "!(attr are present)"
@@ -88553,16 +88553,16 @@ x-validations:
             - _NAME_: ITEMS_FULFILLMENT_ID
               _SCOPE_: "$.message.catalog['bpp/providers'][*].items[*]"
               attr: "$.fulfillment_id"
-              # value: "$.tags[?(@.code=='type')].list[*].value"
-              # customization: ["customization"]
-              # _CONTINUE_: value all in customization || !(attr are present)
+              value: "$.tags[?(@.code=='type')].list[*].value"
+              customization: ["customization"]
+              _CONTINUE_: value all in customization || !(attr are present)
               _RETURN_: attr are present
             - _NAME_: ITEMS_LOCATION_ID
               _SCOPE_: "$.message.catalog['bpp/providers'][*].items[*]"
               attr: ["$.location_id"]
-              # value: "$.tags[?(@.code=='type')].list[*].value"
-              # customization: ["customization"]
-              # _CONTINUE_: value all in customization || !(attr are present)
+              value: "$.tags[?(@.code=='type')].list[*].value"
+              customization: ["customization"]
+              _CONTINUE_: value all in customization || !(attr are present)
               _RETURN_: attr are present
             - _NAME_: ITEMS_RELATED
               attr: "$.message.catalog['bpp/providers'][*].items[*].related"
@@ -89257,13 +89257,6 @@ x-validations:
             - _NAME_: ITEMS_CANCELLABLE
               attr: "$.message.catalog['bpp/providers'][*].items[*]['@ondc/org/cancellable']"
               _RETURN_: attr are present
-            # - _NAME_: ITEMS_RETURN_WINDOW
-            #   _SCOPE_: "$.message.catalog['bpp/providers'][*].items[*]"
-            #   value: "$.tags[?(@.code=='type')].list[*].value"
-            #   customization: ["customization"]
-            #   _CONTINUE_: value all in customization
-            #   attr: "$.['@ondc/org/return_window']"
-            #   _RETURN_: attr are present
             - _NAME_: ITEMS_SELLER_PICKUP_RETURN
               attr: "$.message.catalog['bpp/providers'][*].items[*]['@ondc/org/seller_pickup_return']"
               _RETURN_: attr are present
@@ -89278,11 +89271,11 @@ x-validations:
               _RETURN_: attr are present
             - _NAME_: ITEMS_TAGS
               _RETURN_:
-              # - _NAME_: ITEMS_TAGS_TYPE
-              #   _CONTINUE_: "!(attr are present)"
-              #   attr: "$.message.catalog['bpp/providers'][*].items[*].tags[?(@.code=='type')].list[?(@.code=='type')].value"
-              #   var_enum: ["item", "dynamic_item", "customization"]
-              #   _RETURN_: attr all in var_enum
+              - _NAME_: ITEMS_TAGS_TYPE
+                _CONTINUE_: "!(attr are present)"
+                attr: "$.message.catalog['bpp/providers'][*].items[*].tags[?(@.code=='type')].list[?(@.code=='type')].value"
+                var_enum: ["item", "dynamic_item", "customization"]
+                _RETURN_: attr all in var_enum
 
               - _NAME_: ITEMS_TAGS_ORIGIN
                 _CONTINUE_: "!(attr are present)"
